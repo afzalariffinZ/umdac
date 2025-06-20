@@ -74,22 +74,23 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          {/* Glitch Effect Title */}
+          {/* Main Title */}
           <div className="mb-8">
             <motion.h1 
-              className="text-6xl md:text-8xl font-bold text-white mb-4 font-mono tracking-wider"
-              data-text="UMDAC"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 font-mono tracking-wider leading-tight"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              <span className="relative">
-                <span className="text-primary-300">U</span>
-                <span className="text-primary-200">M</span>
-                <span className="text-primary-100">D</span>
-                <span className="text-primary-200">A</span>
-                <span className="text-primary-300">C</span>
-              </span>
+              <div className="mb-2">
+                <span className="text-primary-300">UNIVERSITY</span>{" "}
+                <span className="text-primary-200">MALAYA</span>
+              </div>
+              <div>
+                <span className="text-primary-100">DATA</span>{" "}
+                <span className="text-primary-200">ANALYTICS</span>{" "}
+                <span className="text-primary-300">CLUB</span>
+              </div>
             </motion.h1>
           </div>
 
@@ -174,7 +175,7 @@ export default function Hero() {
               href="#about"
               className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-500 text-white font-mono font-semibold text-lg rounded-none border-2 border-primary-400 hover:border-primary-300 transition-all duration-300 transform hover:scale-105"
             >
-              <span className="relative z-10">[ABOUT_UMDAC]</span>
+              <span className="relative z-10">[LEARN_MORE]</span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-primary-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <motion.div
                 className="absolute -inset-1 bg-gradient-to-r from-primary-400 to-primary-300 rounded-none opacity-0 group-hover:opacity-30 blur"

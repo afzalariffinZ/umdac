@@ -74,7 +74,7 @@ export default function About() {
 
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 font-mono">
               <span className="text-primary-300">[</span>
-              ABOUT_UMDAC
+              ABOUT_US
               <span className="text-primary-300">]</span>
             </h2>
             

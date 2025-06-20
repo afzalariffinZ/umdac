@@ -53,8 +53,31 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-secondary-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 bg-primary-950 relative overflow-hidden">
+      {/* Background Grid */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'linear-gradient(rgba(147, 51, 234, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(147, 51, 234, 0.1) 1px, transparent 1px)',
+          backgroundSize: '40px 40px'
+        }} />
+      </div>
+
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-10 opacity-20">
+        <motion.div
+          animate={{ 
+            rotate: [0, 360],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ 
+            rotate: { duration: 30, repeat: Infinity, ease: "linear" },
+            scale: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+          }}
+          className="w-20 h-20 border border-primary-400 rounded-lg"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,11 +85,16 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold text-secondary-900 sm:text-4xl">
-            Get in Touch
+          <div className="inline-flex items-center px-4 py-2 bg-primary-900/50 rounded-full border border-primary-700 mb-6">
+            <EnvelopeIcon className="w-4 h-4 text-primary-300 mr-2" />
+            <span className="text-primary-300 font-mono text-sm">CONTACT_FORM.jsx</span>
+          </div>
+          <h2 className="text-4xl font-bold text-white sm:text-5xl font-mono">
+            [GET_IN_TOUCH]
           </h2>
-          <p className="mt-4 text-lg text-secondary-600 max-w-3xl mx-auto">
-            Have questions or want to collaborate? We&apos;d love to hear from you!
+          <p className="mt-6 text-lg text-primary-200 max-w-3xl mx-auto font-mono">
+            // Have questions or want to collaborate?<br/>
+            // We'd love to hear from you!
           </p>
         </motion.div>
 
@@ -79,8 +107,8 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-primary-600 rounded-3xl transform -rotate-6 scale-105 opacity-10" />
-            <div className="relative bg-white rounded-2xl shadow-sm p-8">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-primary-600 rounded-3xl transform -rotate-6 scale-105 opacity-20" />
+            <div className="relative bg-primary-900/80 backdrop-blur-sm rounded-2xl border border-primary-700/50 p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <AnimatePresence>
                   {error && (
@@ -108,8 +136,8 @@ export default function Contact() {
                 </AnimatePresence>
 
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-secondary-700">
-                    Name
+                  <label htmlFor="name" className="block text-sm font-medium text-primary-300 font-mono">
+                    NAME_INPUT:
                   </label>
                   <input
                     type="text"
@@ -117,13 +145,14 @@ export default function Contact() {
                     id="name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="mt-1 block w-full rounded-md border-secondary-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                    className="mt-1 block w-full rounded-md bg-primary-800/50 border-primary-600 text-white placeholder-primary-400 focus:border-primary-400 focus:ring-primary-400 font-mono"
                     disabled={isSubmitting}
+                    placeholder="Enter your name..."
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-secondary-700">
-                    Email
+                  <label htmlFor="email" className="block text-sm font-medium text-primary-300 font-mono">
+                    EMAIL_ADDRESS:
                   </label>
                   <input
                     type="email"
@@ -131,13 +160,14 @@ export default function Contact() {
                     id="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="mt-1 block w-full rounded-md border-secondary-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                    className="mt-1 block w-full rounded-md bg-primary-800/50 border-primary-600 text-white placeholder-primary-400 focus:border-primary-400 focus:ring-primary-400 font-mono"
                     disabled={isSubmitting}
+                    placeholder="your.email@example.com"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-secondary-700">
-                    Message
+                  <label htmlFor="message" className="block text-sm font-medium text-primary-300 font-mono">
+                    MESSAGE_BODY:
                   </label>
                   <textarea
                     name="message"
@@ -145,8 +175,9 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="mt-1 block w-full rounded-md border-secondary-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                    className="mt-1 block w-full rounded-md bg-primary-800/50 border-primary-600 text-white placeholder-primary-400 focus:border-primary-400 focus:ring-primary-400 font-mono"
                     disabled={isSubmitting}
+                    placeholder="Type your message here..."
                   />
                 </div>
                 <div>
@@ -185,12 +216,12 @@ export default function Contact() {
             <div className="space-y-8">
               {/* Email */}
               <div>
-                <h3 className="text-lg font-medium text-secondary-900">Email Us</h3>
-                <div className="mt-3 flex items-center space-x-3 text-secondary-600">
-                  <EnvelopeIcon className="h-6 w-6" />
+                <h3 className="text-lg font-medium text-white font-mono">EMAIL_CONTACT:</h3>
+                <div className="mt-3 flex items-center space-x-3 text-primary-200">
+                  <EnvelopeIcon className="h-6 w-6 text-primary-400" />
                   <a
                     href="mailto:umdac@um.edu.my"
-                    className="hover:text-primary-600 transition-colors duration-300"
+                    className="hover:text-primary-300 transition-colors duration-300 font-mono"
                   >
                     umdac@um.edu.my
                   </a>
@@ -199,13 +230,13 @@ export default function Contact() {
 
               {/* Social Media */}
               <div>
-                <h3 className="text-lg font-medium text-secondary-900">Follow Us</h3>
+                <h3 className="text-lg font-medium text-white font-mono">SOCIAL_LINKS[]:</h3>
                 <div className="mt-3 flex items-center space-x-6">
                   {socialLinks.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
-                      className={`text-secondary-600 ${item.color} transition-colors duration-300`}
+                      className={`text-primary-400 ${item.color} transition-colors duration-300 hover:text-primary-300`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -217,13 +248,13 @@ export default function Contact() {
               </div>
 
               {/* Additional Information */}
-              <div className="prose prose-purple">
-                <h3 className="text-lg font-medium text-secondary-900">Visit Us</h3>
-                <p className="text-secondary-600">
-                  Faculty of Computer Science & Information Technology<br />
-                  University of Malaya<br />
-                  50603 Kuala Lumpur<br />
-                  Malaysia
+              <div>
+                <h3 className="text-lg font-medium text-white font-mono">LOCATION_DATA:</h3>
+                <p className="text-primary-200 font-mono mt-3">
+                  // Faculty of Computer Science & Information Technology<br />
+                  // University of Malaya<br />
+                  // 50603 Kuala Lumpur<br />
+                  // Malaysia
                 </p>
               </div>
             </div>

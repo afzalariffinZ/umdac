@@ -25,18 +25,16 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center group">
               <motion.div
-                className="w-8 h-8 bg-gradient-to-br from-primary-400 to-primary-600 mr-3 relative overflow-hidden"
-                whileHover={{ rotate: 180 }}
+                className="relative"
+                whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="absolute inset-0 bg-grid-pattern opacity-50" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-3 h-3 bg-white rounded-full" />
-                </div>
+                <img
+                  src="https://cdn.prod.website-files.com/66f8f154e9e4ff2af1e8e3f5/66f8faf031bbec4cdf3e713a_Copy%20of%20Transparent%20Background-p-500.png"
+                  alt="UMDAC Logo"
+                  className="w-20 h-20 object-contain"
+                />
               </motion.div>
-              <span className="text-xl font-bold text-white font-mono group-hover:text-primary-300 transition-colors duration-300">
-                <span className="text-primary-300">[</span>UMDAC<span className="text-primary-300">]</span>
-              </span>
             </Link>
           </div>
 
