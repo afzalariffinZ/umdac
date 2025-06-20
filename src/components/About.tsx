@@ -122,7 +122,7 @@ export default function About() {
 
                   {/* Content */}
                   <h3 className="text-xl font-bold text-white mb-4 font-mono">
-                    <span className="text-primary-300">//</span> {feature.name}
+                    <span className="text-primary-300">{/* // */}</span> {feature.name}
                   </h3>
                   
                   <p className="text-primary-100 leading-relaxed font-mono text-sm">
@@ -166,7 +166,7 @@ export default function About() {
           <div className="bg-gradient-to-r from-primary-900/30 to-secondary-800/30 backdrop-blur-sm border border-primary-500/30 p-8 rounded-none">
             <p className="text-lg md:text-xl text-primary-100 max-w-4xl mx-auto font-mono leading-relaxed">
               <span className="text-primary-300">console.log(</span>
-              <span className="text-primary-200">"Through workshops, projects, and industry partnerships, we empower students to transform data into actionable insights and prepare for careers in the data-driven economy."</span>
+              <span className="text-primary-200">&ldquo;Through workshops, projects, and industry partnerships, we empower students to transform data into actionable insights and prepare for careers in the data-driven economy.&rdquo;</span>
               <span className="text-primary-300">);</span>
             </p>
           </div>

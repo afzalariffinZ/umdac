@@ -104,8 +104,8 @@ export default function Team() {
             [MEET_THE_TEAM]
           </h2>
           <p className="mt-6 text-lg text-primary-200 max-w-3xl mx-auto font-mono">
-            // Our dedicated committee members working together<br/>
-            // to bring data analytics education to life
+            {/* Our dedicated committee members working together */}<br/>
+            {/* to bring data analytics education to life */}
           </p>
         </motion.div>
 
@@ -252,7 +252,7 @@ export default function Team() {
           className="mt-16 text-center"
         >
           <p className="text-primary-500 font-mono text-sm">
-            console.log("Team structure loaded: {committees.length} committees, {committees.reduce((acc, c) => acc + c.members.length, 0)} members ✓");
+            console.log(&ldquo;Team structure loaded: {committees.length} committees, {committees.reduce((acc, c) => acc + c.members.length, 0)} members ✓&rdquo;);
           </p>
         </motion.div>
       </div>

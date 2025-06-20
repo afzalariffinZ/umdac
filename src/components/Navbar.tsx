@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -14,8 +15,51 @@ const navItems = [
   { name: 'Contact', href: '#contact', code: '06' },
 ]
 
+// Fallback Logo Component
+const UMDACLogo = ({ className = "w-20 h-20" }: { className?: string }) => (
+  <svg
+    className={className}
+    viewBox="0 0 80 80"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#8B5CF6" />
+        <stop offset="50%" stopColor="#A855F7" />
+        <stop offset="100%" stopColor="#C084FC" />
+      </linearGradient>
+    </defs>
+    
+    {/* Outer hexagon */}
+    <path
+      d="M40 8L64 22V54L40 68L16 54V22L40 8Z"
+      stroke="url(#logoGradient)"
+      strokeWidth="2"
+      fill="none"
+    />
+    
+    {/* Inner data visualization elements */}
+    <circle cx="40" cy="40" r="3" fill="#8B5CF6" />
+    <circle cx="28" cy="32" r="2" fill="#A855F7" />
+    <circle cx="52" cy="32" r="2" fill="#A855F7" />
+    <circle cx="28" cy="48" r="2" fill="#A855F7" />
+    <circle cx="52" cy="48" r="2" fill="#A855F7" />
+    
+    {/* Connecting lines */}
+    <line x1="40" y1="40" x2="28" y2="32" stroke="#8B5CF6" strokeWidth="1" opacity="0.6" />
+    <line x1="40" y1="40" x2="52" y2="32" stroke="#8B5CF6" strokeWidth="1" opacity="0.6" />
+    <line x1="40" y1="40" x2="28" y2="48" stroke="#8B5CF6" strokeWidth="1" opacity="0.6" />
+    <line x1="40" y1="40" x2="52" y2="48" stroke="#8B5CF6" strokeWidth="1" opacity="0.6" />
+    
+    {/* Text */}
+    <text x="40" y="62" textAnchor="middle" className="fill-primary-400 text-xs font-mono">UMDAC</text>
+  </svg>
+)
+
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [imageError, setImageError] = useState(false)
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-secondary-900/95 to-primary-900/95 backdrop-blur-md border-b border-primary-500/30">
@@ -29,11 +73,18 @@ export default function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <img
-                  src="https://cdn.prod.website-files.com/66f8f154e9e4ff2af1e8e3f5/66f8faf031bbec4cdf3e713a_Copy%20of%20Transparent%20Background-p-500.png"
-                  alt="UMDAC Logo"
-                  className="w-20 h-20 object-contain"
-                />
+                {!imageError ? (
+                  <Image
+                    src="https://cdn.prod.website-files.com/66f8f154e9e4ff2af1e8e3f5/66f8faf031bbec4cdf3e713a_Copy%20of%20Transparent%20Background-p-500.png"
+                    alt="UMDAC Logo"
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                    onError={() => setImageError(true)}
+                  />
+                ) : (
+                  <UMDACLogo className="w-20 h-20" />
+                )}
               </motion.div>
             </Link>
           </div>

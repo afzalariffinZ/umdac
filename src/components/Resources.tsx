@@ -141,8 +141,8 @@ export default function Resources() {
             [LEARNING_RESOURCES]
           </h2>
           <p className="mt-6 text-lg text-primary-200 max-w-3xl mx-auto font-mono">
-            // Access our comprehensive collection of learning materials,<br/>
-            // workshop recordings, and collaborative partnerships
+            {/* Access our comprehensive collection of learning materials, */}<br/>
+            {/* workshop recordings, and collaborative partnerships */}
           </p>
         </motion.div>
 
@@ -366,7 +366,7 @@ export default function Resources() {
           className="text-center"
         >
           <p className="text-primary-500 font-mono text-sm">
-            console.log("Resources loaded: workshops, materials, collaborators ✓");
+            console.log(&ldquo;Resources loaded: workshops, materials, collaborators ✓&rdquo;);
           </p>
         </motion.div>
       </div>

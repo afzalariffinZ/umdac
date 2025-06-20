@@ -83,8 +83,8 @@ export default function Pillars() {
             [OUR_PILLARS]
           </h2>
           <p className="mt-6 text-lg text-primary-200 max-w-3xl mx-auto font-mono">
-            // Three interconnected pathways designed to guide your journey<br/>
-            // from data novice to analytics professional
+            {/* Three interconnected pathways designed to guide your journey */}<br/>
+            {/* from data novice to analytics professional */}
           </p>
         </motion.div>
 
@@ -170,7 +170,7 @@ export default function Pillars() {
           className="mt-16 text-center"
         >
           <p className="text-primary-500 font-mono text-sm">
-            console.log("Pillars initialized successfully ✓");
+            console.log(&ldquo;Pillars initialized successfully ✓&rdquo;);
           </p>
         </motion.div>
       </div>

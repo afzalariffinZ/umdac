@@ -93,8 +93,8 @@ export default function Contact() {
             [GET_IN_TOUCH]
           </h2>
           <p className="mt-6 text-lg text-primary-200 max-w-3xl mx-auto font-mono">
-            // Have questions or want to collaborate?<br/>
-            // We'd love to hear from you!
+            {/* Have questions or want to collaborate? */}<br/>
+            {/* We'd love to hear from you! */}
           </p>
         </motion.div>
 
@@ -251,10 +251,10 @@ export default function Contact() {
               <div>
                 <h3 className="text-lg font-medium text-white font-mono">LOCATION_DATA:</h3>
                 <p className="text-primary-200 font-mono mt-3">
-                  // Faculty of Computer Science & Information Technology<br />
-                  // University of Malaya<br />
-                  // 50603 Kuala Lumpur<br />
-                  // Malaysia
+                  {/* Faculty of Computer Science & Information Technology */}<br />
+                  {/* University of Malaya */}<br />
+                  {/* 50603 Kuala Lumpur */}<br />
+                  {/* Malaysia */}
                 </p>
               </div>
             </div>
