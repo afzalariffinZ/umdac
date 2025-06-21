@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { UserGroupIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
-import Image from 'next/image'
+
 
 const committees = [
   {
