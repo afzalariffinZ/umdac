@@ -18,7 +18,7 @@ const committees = [
     name: 'Programme & Protocol',
     code: 'PROG_002',
     members: [
-      { name: 'Ming Wei', role: 'Head of Programme', image: '/placeholder-profile.jpg', id: 'PROG_HEAD' },
+      { name: 'Nurul Adhia Afiqah', role: 'Head of Programme', image: 'https://media.licdn.com/dms/image/v2/D5603AQGOKbspjbtABA/profile-displayphoto-shrink_800_800/B56Zcx3p8FHEAc-/0/1748888365720?e=1755734400&v=beta&t=2pfnu5RAJIYQhOnnZ1juKnGPrZbah_IWRfStrPDGzQc', id: 'PROG_HEAD' },
       { name: 'Aisha Abdullah', role: 'Programme Executive', image: '/placeholder-profile.jpg', id: 'PROG_EXEC' },
       { name: 'Raj Kumar', role: 'Protocol Officer', image: '/placeholder-profile.jpg', id: 'PROT_001' },
     ],
