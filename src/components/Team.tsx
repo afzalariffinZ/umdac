@@ -2,15 +2,16 @@
 
 import { motion } from 'framer-motion'
 import { UserGroupIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 
 const committees = [
   {
     name: 'High Committee',
     code: 'EXEC_001',
     members: [
-      { name: 'Sarah Lee', role: 'President', image: '/placeholder-profile.jpg', id: 'PRES_001' },
-      { name: 'Ahmad Razif', role: 'Vice President', image: '/placeholder-profile.jpg', id: 'VP_001' },
-      { name: 'Priya Sharma', role: 'Secretary', image: '/placeholder-profile.jpg', id: 'SEC_001' },
+      { name: 'Syarifah Raini Naesha', role: 'President', image: 'https://media.licdn.com/dms/image/v2/D4E03AQG3jm4r09Oxxw/profile-displayphoto-shrink_400_400/B4EZdlQ2omHsAg-/0/1749750607116?e=1755734400&v=beta&t=9Mp7mqr0ON6SCjn7pY6dDhbRHSYuAUxj-IW4toc7AH8', id: 'PRES_001' },
+      { name: 'Afzal Ariffin', role: 'Vice President', image: 'https://media.licdn.com/dms/image/v2/D5603AQFGb4WtaZmUoA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1700821523667?e=1755734400&v=beta&t=PMb8nyBgkx2wt1gDpdtgThVQKK9QdRaMwDFf44OgoSI', id: 'VP_001' },
+      { name: 'Izzhan Hakimi', role: 'Secretary', image: 'https://media.licdn.com/dms/image/v2/D5603AQGbrMTg3Aqadw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1697729946404?e=1755734400&v=beta&t=5_v6Sg_U3vqhTrBlQ3JTitlPtl_w_kKJsKt_rS7Es80', id: 'SEC_001' },
     ],
   },
   {
@@ -168,23 +169,36 @@ export default function Team() {
                       <div className="p-6">
                         {/* Avatar */}
                         <div className="relative w-20 h-20 mx-auto mb-4">
-                          <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-primary-600 rounded-lg flex items-center justify-center">
-                            <motion.svg 
-                              className="w-10 h-10 text-white" 
-                              fill="currentColor" 
-                              viewBox="0 0 24 24"
-                              animate={{ 
-                                scale: [1, 1.05, 1],
-                              }}
-                              transition={{ 
-                                duration: 3,
-                                repeat: Infinity,
-                                ease: "easeInOut"
-                              }}
-                            >
-                              <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </motion.svg>
-                          </div>
+                          {member.image && !member.image.includes('placeholder') ? (
+                            <>
+                              <img
+                                src={member.image}
+                                alt={member.name}
+                                className="w-20 h-20 rounded-lg object-cover"
+                                loading="lazy"
+                              />
+                              {/* Overlay for better contrast */}
+                              <div className="absolute inset-0 bg-gradient-to-t from-primary-900/50 to-transparent rounded-lg" />
+                            </>
+                          ) : (
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-primary-600 rounded-lg flex items-center justify-center">
+                              <motion.svg 
+                                className="w-10 h-10 text-white" 
+                                fill="currentColor" 
+                                viewBox="0 0 24 24"
+                                animate={{ 
+                                  scale: [1, 1.05, 1],
+                                }}
+                                transition={{ 
+                                  duration: 3,
+                                  repeat: Infinity,
+                                  ease: "easeInOut"
+                                }}
+                              >
+                                <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                              </motion.svg>
+                            </div>
+                          )}
                           
                           {/* Animated Ring */}
                           <motion.div
